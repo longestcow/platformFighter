@@ -9,7 +9,7 @@ includes plans, ideas, changes, challenges, solutions, and more. -  https://www.
 o User Input - Controller Input  
 o Variables - done  
 o A while loop - Unity doesn't really like while loops but I guess a substitue could be Coroutines which  
-are just functions that run on seperate threads from the main thread, and can be used to execute something after some time.  
+are just functions that run on seperate threads from the main thread, and can be used to execute something after some delay.  
 o A for loop - done
 o An if/elif statement - done    
 o Fruitful functions - done   
