@@ -5,7 +5,7 @@ The .meta files are made by unity so open the .cs files instead to look at the c
 
 
 o A journal or log that has a minimum of 20 hours’ worth of information (recorded hourly). This  
-includes plans, ideas, changes, challenges, solutions, and more. -  
+includes plans, ideas, changes, challenges, solutions, and more. -  https://www.notion.so/invite/cb2119e3e8cc95fcfa0de67a0f0b540e3d629610
 o User Input - Controller Input  
 o Variables - done  
 o A while loop - Unity doesn't really like while loops but I guess a substitue could be Coroutines which  
