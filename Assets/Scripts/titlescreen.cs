@@ -22,7 +22,7 @@ public class titlescreen : MonoBehaviour
         p2c.SetActive(false);
         manager = GameObject.Find("PlayerManager").GetComponent<Manager>();
         started = false;
-        StartCoroutine(textBlink(0.5f, 400)); // start the blink for "press any button to join" text
+        StartCoroutine(textBlink(0.5f, 400));
     }
 
     // Update is called once per frame
@@ -31,21 +31,21 @@ public class titlescreen : MonoBehaviour
         if(joined) return;
 
         if (pastno != manager.number)
-            camimp.GenerateImpulse(new Vector3(2, 0.1f, 0)); // cam shake on new player
-        if (manager.number == 1) p1c.SetActive(true); //show title screen player 1
+            camimp.GenerateImpulse(new Vector3(2, 0.1f, 0));
+        if (manager.number == 1) p1c.SetActive(true);
         if (manager.number == 2)
         {
-            p2c.SetActive(true); //show title screen player 2
-            StopAllCoroutines(); //stop the 0.5s blink
-            StartCoroutine(textBlink(0.1f, 12)); // start a faster blink
-            manager.pickStage(Random.value<0.5f?1:2); // ppick random stage
+            p2c.SetActive(true);
+            StopAllCoroutines();
+            StartCoroutine(textBlink(0.1f, 12));
+            manager.pickStage(Random.value<0.5f?1:2);
             joined=true;
         }
         pastno = manager.number;
 
     }
 
-    IEnumerator textBlink(float sec, int i){ //blinks the "press any button to join" text
+    IEnumerator textBlink(float sec, int i){
         yield return new WaitForSeconds(sec);
         pressA.color=new Vector4(1,1,1,1f - ((blink)?0:0.5f));
         blink=!blink;
@@ -59,7 +59,7 @@ public class titlescreen : MonoBehaviour
         StartCoroutine(textBlink(sec, (i==400?i:i-1)));
     }
 
-    void hideObject(){ // disables the title screen so that it can be enabled and used later on for the end screen
+    void hideObject(){
         for(int ij = 0; ij<transform.childCount; ij++){
             transform.GetChild(ij).gameObject.SetActive(false);
             
@@ -69,7 +69,7 @@ public class titlescreen : MonoBehaviour
 
     }
 
-    public void Continue(){ // this was supposed to be my attempt at adding a "press any button to play again" at the end but nothing worked so i removed all of that code. i might try making that again later on
+    public void Continue(){
         StartCoroutine(textBlink(0.5f, 400));
     }
 
